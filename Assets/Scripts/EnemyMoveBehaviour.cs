@@ -1,5 +1,6 @@
 ﻿using ODT.GO.Board;
 using ODT.GO.Util;
+using ODT.Util.Scriptable;
 using UnityEngine;
 
 namespace ODT.GO.Enemy
@@ -12,6 +13,9 @@ namespace ODT.GO.Enemy
     public class EnemyMoveBehaviour : MoveBehaviour, IEnemy
     {
         private NodeBehaviour lookAtNode;
+
+        [SerializeField]
+        private GameEvent OnCatchPlayerEvent;
 
         public void SetLookAtNode(NodeBehaviour node)
         {
@@ -39,7 +43,11 @@ namespace ODT.GO.Enemy
         {
             if (LevelManager.instancie.IsPlayerOnSideTo(lookAtNode))
             {
-                MoveForward();
+                MoveTo(lookAtNode);
+                if (OnCatchPlayerEvent != null)
+                {
+                    OnCatchPlayerEvent.Raise();
+                }
             }
         }
     }

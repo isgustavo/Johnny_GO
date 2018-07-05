@@ -223,6 +223,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1275088269742864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4297330740318358}
+  - component: {fileID: 33698444420672608}
+  - component: {fileID: 23055969530054110}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1297442556396728
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,10 +811,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4154450185571818}
+  - component: {fileID: 114980835146018596}
   - component: {fileID: 114475374094154102}
   - component: {fileID: 114789048746430990}
+  - component: {fileID: 114390366793929316}
   m_Layer: 0
-  m_Name: Board
+  m_Name: Level0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -903,6 +922,7 @@ Transform:
   - {fileID: 4336694578837248}
   - {fileID: 4465778273274634}
   - {fileID: 4273242215996212}
+  - {fileID: 4297330740318358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1043,6 +1063,19 @@ Transform:
   m_Father: {fileID: 4273242215996212}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!4 &4297330740318358
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275088269742864}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalScale: {x: 30, y: 1, z: 25}
+  m_Children: []
+  m_Father: {fileID: 4154450185571818}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4306523211232966
 Transform:
   m_ObjectHideFlags: 1
@@ -1646,6 +1679,41 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 0e391158eb3da5348af804266cc2abad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23055969530054110
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275088269742864}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -3274,6 +3342,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1604996895956972}
   m_Mesh: {fileID: 4300000, guid: 056008b308d8a984686d429d594bb82c, type: 3}
+--- !u!33 &33698444420672608
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275088269742864}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33700276481373370
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -3649,6 +3724,34 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &114390366793929316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977527768332626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f6bc59eb0a7d14296315e1e96f3d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 005639dc2c8c9014e9de62d22b43191c, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114980835146018596}
+        m_MethodName: OnPlayerMoved
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114397102986512254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3894,6 +3997,34 @@ MonoBehaviour:
   scaleTime: 0.25
   delay: 0.3
   rotateSpeed: 20
+--- !u!114 &114980835146018596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1977527768332626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59942ad50c48fe43934d80c72266c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 1796121588371446, guid: b26c349f922e69f4095e4d9a4c135382,
+    type: 2}
+  enemyPrefab: {fileID: 1197062600968044, guid: c9555a2cc594aa7479bbcd0ace419d4f,
+    type: 2}
+  enemiesOnBoard:
+  - InitNodePosition: {fileID: 114319995653671148}
+    LookAtNodePosition: {fileID: 114168674143267536}
+  - InitNodePosition: {fileID: 114934332291662160}
+    LookAtNodePosition: {fileID: 114264807565096542}
+  - InitNodePosition: {fileID: 114374071463024356}
+    LookAtNodePosition: {fileID: 114234198948349050}
+  - InitNodePosition: {fileID: 114234198948349050}
+    LookAtNodePosition: {fileID: 114321102997135526}
+  - InitNodePosition: {fileID: 114388606336554128}
+    LookAtNodePosition: {fileID: 114397102986512254}
+  - InitNodePosition: {fileID: 114397102986512254}
+    LookAtNodePosition: {fileID: 114321102997135526}
 --- !u!114 &114985225664235546
 MonoBehaviour:
   m_ObjectHideFlags: 1

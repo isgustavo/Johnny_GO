@@ -18,9 +18,6 @@ namespace ODT.GO
     {
         public static LevelManager instancie;
 
-        [Header("Board")]
-        [SerializeField]
-        private GameObject boardPrefab;
         [Header("Player")]
         [SerializeField]
         private GameObject playerPrefab;
@@ -67,8 +64,7 @@ namespace ODT.GO
 
         private void InstantiateBoard()
         {
-            var boardObj = Instantiate(boardPrefab);
-            board = boardObj.GetComponent<BoardBehaviour>();
+            board = GetComponent<BoardBehaviour>();
         }
 
         private void InstantiatePlayer()
